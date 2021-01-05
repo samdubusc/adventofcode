@@ -34,15 +34,11 @@ def memoize(func):
 
 @memoize
 def combo_count(a: int = 0):
-
   count = 0
-
   if a == ADAPTERS[-1]:
-    return count + 1
-
+    return 1
   for ai in [a+i for i in range(1,4) if a+i in ADAPTERS]:
     count += combo_count(ai)
-
   return count
 
 print(f"count: {combo_count()}")
