@@ -7,12 +7,10 @@ NUMBER_OF_TURNS = 30000000
 
 
 def main(input_file: str) -> int:
-    numbers = []
     turns = []
     last = {}
 
-    for line in read_lines(input_file):
-        numbers = list(map(int, line.split(',')))
+    numbers = [int(n) for n in list(read_lines(input_file))[0].split(",")]
 
     for turn in range(NUMBER_OF_TURNS):
         if turn < len(numbers):
